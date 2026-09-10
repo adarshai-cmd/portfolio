@@ -4,86 +4,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adarsh Pandey | AI Researcher & Machine Learning Enthusiast</title>
-  <meta name="description" content="Portfolio of Adarsh Pandey, an MCA Artificial Intelligence & Data Science student exploring Machine Learning, Deep Learning, Generative AI and AI Research.">
-  <meta name="keywords" content="Adarsh Pandey, AI Researcher, Artificial Intelligence, Machine Learning, Data Science, Deep Learning, Generative AI, MCA AI Data Science, AI Student">
+  <meta name="description" content="Portfolio of Adarsh Pandey — AI Researcher in the Making. Exploring Machine Learning, Data and Intelligent Systems. MCA Artificial Intelligence & Data Science at Graphic Era University.">
+  <meta name="keywords" content="Adarsh Pandey, AI Researcher, Artificial Intelligence, Machine Learning, Data Science, Deep Learning, Generative AI, MCA AI Data Science, AI Student, Graphic Era University">
   <meta name="author" content="Adarsh Pandey">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.adarsh-pandey.in/">
 
   <!-- OpenGraph Meta -->
   <meta property="og:title" content="Adarsh Pandey | AI Researcher & Machine Learning Enthusiast">
-  <meta property="og:description" content="Portfolio of Adarsh Pandey, an MCA Artificial Intelligence & Data Science student exploring Machine Learning, Deep Learning, Generative AI and AI Research.">
+  <meta property="og:description" content="Portfolio of Adarsh Pandey — AI Researcher in the Making. Exploring Machine Learning, Data and Intelligent Systems.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://github.com/adarshai-cmd">
+  <meta property="og:url" content="https://www.adarsh-pandey.in/">
+  <meta property="og:image" content="https://www.adarsh-pandey.in/assets/profile.png">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Adarsh Pandey | AI Researcher & Machine Learning Enthusiast">
+  <meta name="twitter:description" content="Portfolio of Adarsh Pandey — AI Researcher in the Making. Exploring Machine Learning, Data and Intelligent Systems.">
+  <meta name="twitter:image" content="https://www.adarsh-pandey.in/assets/profile.png">
 
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Sticky Navbar -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#home" class="nav-logo">
-        <div class="nav-logo-badge">AP</div>
-        <span>Adarsh Pandey</span>
-      </a>
+  <!-- Living Atmospheric Cloud Background -->
+  <canvas id="atmospheric-canvas" aria-hidden="true"></canvas>
 
-      <ul class="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#certificates" class="nav-link">Certificates</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#journey" class="nav-link">Journey</a></li>
-        <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
-        <li><a href="#lab" class="nav-link">Lab</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+  <!-- Sticky Floating Glass Navbar -->
+  <header class="navbar" id="site-header">
+    <div class="container">
+      <div class="nav-container">
+        <a href="#home" class="nav-logo" aria-label="Adarsh Pandey Portfolio Home">
+          <div class="nav-logo-photo-box">
+            <img src="assets/profile.png" onerror="this.onerror=null; this.src='assets/images/profile.svg';" alt="Adarsh Pandey Profile Photo" class="nav-logo-photo">
+            <span class="nav-logo-dot" aria-hidden="true"></span>
+          </div>
+          <span class="nav-logo-name">Adarsh Pandey</span>
+        </a>
 
-      <div class="nav-right">
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certificates" class="nav-link">Certificates</a></li>
+          <li><a href="#research" class="nav-link">Research</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#journey" class="nav-link">Journey</a></li>
+          <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+          <li><a href="#lab" class="nav-link">Lab</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Mobile Navigation Drawer -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#home" class="mobile-menu-link">Home</a>
-    <a href="#about" class="mobile-menu-link">About</a>
-    <a href="#skills" class="mobile-menu-link">Skills</a>
-    <a href="#education" class="mobile-menu-link">Education</a>
-    <a href="#certificates" class="mobile-menu-link">Certificates</a>
-    <a href="#research" class="mobile-menu-link">Research</a>
-    <a href="#projects" class="mobile-menu-link">Projects</a>
-    <a href="#journey" class="mobile-menu-link">Journey</a>
-    <a href="#roadmap" class="mobile-menu-link">Roadmap</a>
-    <a href="#lab" class="mobile-menu-link">Lab</a>
-    <a href="#contact" class="mobile-menu-link">Contact</a>
-    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Let's Connect</a>
+    <div class="mobile-menu-header">
+      <div class="mobile-profile-info">
+        <div class="nav-logo-photo-box" style="width: 44px; height: 44px;">
+          <img src="assets/profile.png" onerror="this.onerror=null; this.src='assets/images/profile.svg';" alt="Adarsh Pandey Profile Photo" class="nav-logo-photo">
+          <span class="nav-logo-dot" aria-hidden="true"></span>
+        </div>
+        <div>
+          <div class="nav-logo-name" style="font-size: 1.05rem;">Adarsh Pandey</div>
+          <div style="font-size: 0.78rem; color: var(--accent-blue); font-family: var(--font-mono);">AI Researcher in the Making</div>
+        </div>
+      </div>
+      <button class="mobile-close-btn" id="mobile-close" aria-label="Close Navigation Menu">&times;</button>
+    </div>
+
+    <div class="mobile-menu-links">
+      <a href="#home" class="mobile-menu-link">Home</a>
+      <a href="#about" class="mobile-menu-link">About</a>
+      <a href="#skills" class="mobile-menu-link">Skills</a>
+      <a href="#education" class="mobile-menu-link">Education</a>
+      <a href="#certificates" class="mobile-menu-link">Certificates</a>
+      <a href="#research" class="mobile-menu-link">Research</a>
+      <a href="#projects" class="mobile-menu-link">Projects</a>
+      <a href="#journey" class="mobile-menu-link">Journey</a>
+      <a href="#roadmap" class="mobile-menu-link">Roadmap</a>
+      <a href="#lab" class="mobile-menu-link">Lab</a>
+      <a href="#contact" class="mobile-menu-link">Contact</a>
+    </div>
+
+    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Let's Connect</a>
   </div>
 
   <!-- Hero Section -->
   <section class="hero-section" id="home">
-    <canvas id="neural-canvas"></canvas>
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
           <div class="status-badge">
             <span class="ping-dot"></span>
-            <span>Currently learning • Machine Learning & AI Research</span>
+            <span>Currently Active • MCA AI & Data Science • Research Track</span>
           </div>
 
+          <span class="hero-identity-tag">AI Researcher in the Making</span>
+
           <h1 class="hero-title gradient-text">
-            Building Intelligence.<br>
-            Exploring the Future of AI.
+            Exploring Machine Learning, Data & Intelligent Systems.
           </h1>
 
           <p class="hero-subtitle">
-            I’m <strong>Adarsh Pandey</strong>, an MCA student specializing in <strong>Artificial Intelligence & Data Science</strong> at Graphic Era University, exploring Machine Learning, Deep Learning, Generative AI and research-driven problem solving.
+            I’m <strong>Adarsh Pandey</strong>, an MCA student specializing in <strong>Artificial Intelligence & Data Science</strong> at Graphic Era University. I combine solid mathematical foundations with exploratory experimentation to build next-generation intelligent solutions.
           </p>
 
           <div class="hero-actions">
@@ -92,17 +126,32 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a href="#contact" class="btn btn-secondary">Let's Connect</a>
-            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Profile">
+            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Profile (@adarshai-cmd)">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
           </div>
         </div>
 
-        <!-- Hero Profile Photo Frame -->
-        <div class="hero-photo-wrapper">
-          <div class="hero-photo-frame">
-            <img src="assets/profile.png" onerror="this.onerror=null; this.src='assets/images/profile.svg';" alt="Adarsh Pandey Profile Photo" class="hero-photo-img">
-            <div class="hero-photo-badge">AI Student • Researcher</div>
+        <!-- Hero Profile Photo Frame (Interactive 3D Circular Model) -->
+        <div class="hero-photo-wrapper" id="hero-3d-wrapper">
+          <div class="hero-3d-stage" id="hero-3d-stage">
+            <!-- 3D Orbital Rings -->
+            <div class="orbital-ring ring-1" aria-hidden="true">
+              <span class="orbital-beacon"></span>
+            </div>
+            <div class="orbital-ring ring-2" aria-hidden="true">
+              <span class="orbital-beacon"></span>
+            </div>
+            <div class="orbital-glow" aria-hidden="true"></div>
+
+            <!-- Central 3D Circular Avatar Capsule -->
+            <div class="hero-photo-circle" id="hero-photo-circle">
+              <img src="assets/profile.png" onerror="this.onerror=null; this.src='assets/images/profile.svg';" alt="Adarsh Pandey Profile Photo" class="hero-photo-img">
+              <div class="hero-photo-badge">
+                <span class="badge-dot"></span>
+                <span>AI Student • Researcher</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -113,24 +162,24 @@
   <section id="about">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Background & Identity</span>
+        <span class="section-tag">Identity & Direction</span>
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Bridging mathematical foundations with research-driven AI systems.</p>
+        <p class="section-subtitle">Bridging mathematical principles with research-driven AI and empirical experimentation.</p>
       </div>
 
       <div class="about-grid">
-        <div class="about-text glass-card" style="padding: 2.2rem;">
+        <div class="about-text glass-card">
           <p>
             I’m <span class="about-highlight">Adarsh Pandey</span>, currently pursuing an <span class="about-highlight">MCA in Artificial Intelligence & Data Science</span> at Graphic Era University.
           </p>
           <p>
-            My journey into technology started with a BCA at Microtech College of Management and Technology, where I developed my foundation in programming and computer science principles. I am now focusing on Artificial Intelligence, Machine Learning, Data Science, and research-oriented problem solving.
+            My journey into computer science began with a BCA from Microtech College of Management and Technology, where I developed fundamental programming discipline and software engineering principles. Today, my primary intellectual focus centers on Artificial Intelligence, Machine Learning, Data Science, and research-oriented problem solving.
           </p>
           <p>
-            My long-term goal is to become an <span class="about-highlight">AI Researcher / AI Research Scientist</span> and contribute to meaningful, foundational advancements in Artificial Intelligence.
+            My long-term aspiration is to become an <span class="about-highlight">AI Researcher / AI Research Scientist</span>, contributing to meaningful, foundational advancements in intelligent systems and machine cognition.
           </p>
           <p>
-            I believe strong AI requires more than using existing models. It requires understanding mathematics, algorithms, experimentation, implementation, and the rigorous research behind modern intelligent systems.
+            I believe true AI capability extends far beyond calling pre-trained APIs. It demands a rigorous grasp of linear algebra, probability, loss landscapes, reproducible experimentation, and the foundational algorithms powering modern intelligence.
           </p>
         </div>
 
@@ -138,7 +187,7 @@
           <div class="info-card glass-card">
             <div class="info-icon">🎓</div>
             <div class="info-card-content">
-              <h4>Education</h4>
+              <h4>Academic Degree</h4>
               <p>MCA — AI & Data Science</p>
               <span style="font-size: 0.85rem; color: var(--text-muted);">Graphic Era University</span>
             </div>
@@ -147,18 +196,18 @@
           <div class="info-card glass-card">
             <div class="info-icon">🔬</div>
             <div class="info-card-content">
-              <h4>Focus</h4>
-              <p>Artificial Intelligence & Research</p>
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Algorithms & Empirical Testing</span>
+              <h4>Research Focus</h4>
+              <p>Machine Learning & Systems</p>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Optimization & Empirical Verification</span>
             </div>
           </div>
 
           <div class="info-card glass-card">
             <div class="info-icon">🚀</div>
             <div class="info-card-content">
-              <h4>Career Goal</h4>
+              <h4>Career Destination</h4>
               <p>AI Research Scientist</p>
-              <span style="font-size: 0.85rem; color: var(--text-muted);">Building Foundational Intelligence</span>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Contributing to Foundational AI</span>
             </div>
           </div>
         </div>
@@ -172,7 +221,7 @@
       <div class="section-header">
         <span class="section-tag">Competencies</span>
         <h2 class="section-title">Technical Skills</h2>
-        <p class="section-subtitle">Honest proficiency assessment focused on continuous learning and technical mastery.</p>
+        <p class="section-subtitle">Authentic technical assessment focused on deep continuous learning and practical mastery.</p>
       </div>
 
       <div class="skill-categories">
@@ -280,7 +329,7 @@
           </div>
         </div>
 
-        <!-- Artificial Intelligence -->
+        <!-- Artificial Intelligence Domains -->
         <div class="skill-category-card glass-card">
           <div class="category-header">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -306,7 +355,7 @@
           </div>
         </div>
 
-        <!-- Tools & Environment -->
+        <!-- Tools & Workflow -->
         <div class="skill-category-card glass-card">
           <div class="category-header">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
@@ -339,27 +388,27 @@
     </div>
   </section>
 
-  <!-- Education Section with Institute Photos -->
+  <!-- Education Section with Real Institute Photos -->
   <section id="education">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Academic Background</span>
+        <span class="section-tag">Academic Trajectory</span>
         <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">Academic institutions shaping my computer applications, AI, and data science specialization.</p>
+        <p class="section-subtitle">Academic institutions shaping my computer science foundations and artificial intelligence specialization.</p>
       </div>
 
       <div class="education-grid">
         <!-- MCA Graphic Era University -->
         <div class="education-card glass-card">
           <div class="edu-photo-box">
-            <img src="assets/graphicera.jpeg" onerror="this.onerror=null; this.src='assets/images/graphic_era.svg';" alt="Graphic Era University Campus" class="edu-photo-img">
+            <img src="assets/graphicera.jpeg" onerror="this.onerror=null; this.src='assets/images/graphic_era.svg';" alt="Graphic Era University Campus" class="edu-photo-img" loading="lazy">
           </div>
           <div class="edu-card-body">
             <span class="edu-status current">● Currently Pursuing</span>
             <h3 class="edu-degree">MCA — Artificial Intelligence & Data Science</h3>
-            <div class="edu-institution">Graphic Era University</div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-              Specialized Master's curriculum focused on Machine Learning, Deep Learning, Data Analytics, Neural Networks, and AI Research methodology.
+            <div class="edu-institution">Graphic Era University, Dehradun</div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+              Advanced curriculum focused on Machine Learning, Deep Learning, Statistical Analysis, Neural Networks, and AI Research methodology.
             </p>
           </div>
         </div>
@@ -367,14 +416,14 @@
         <!-- BCA Microtech College -->
         <div class="education-card glass-card">
           <div class="edu-photo-box">
-            <img src="assets/microtek.jpeg" onerror="this.onerror=null; this.src='assets/images/microtech_college.svg';" alt="Microtech College of Management and Technology" class="edu-photo-img">
+            <img src="assets/microtek.jpeg" onerror="this.onerror=null; this.src='assets/images/microtech_college.svg';" alt="Microtech College of Management and Technology" class="edu-photo-img" loading="lazy">
           </div>
           <div class="edu-card-body">
             <span class="edu-status completed">✓ Completed</span>
             <h3 class="edu-degree">BCA — Bachelor of Computer Applications</h3>
-            <div class="edu-institution">Microtech College of Management and Technology, Muftiganj</div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
-              Undergraduate foundation covering programming paradigms, data structures, database management systems, software engineering, and computer science fundamentals.
+            <div class="edu-institution">Microtech College of Management & Technology, Muftiganj</div>
+            <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.65;">
+              Undergraduate education covering programming paradigms, data structures, database management systems, software engineering, and core computing fundamentals.
             </p>
           </div>
         </div>
@@ -388,7 +437,7 @@
       <div class="section-header">
         <span class="section-tag">Credentials & Growth</span>
         <h2 class="section-title">Certifications & Learning</h2>
-        <p class="section-subtitle">Verified technical coursework and ongoing specialized learning certifications.</p>
+        <p class="section-subtitle">Verified technical coursework and ongoing specialized machine learning credentials.</p>
       </div>
 
       <div class="certs-grid">
@@ -397,7 +446,7 @@
           <div class="cert-icon">🐍</div>
           <h3 class="cert-title">Python for Data Science & AI</h3>
           <div class="cert-issuer">Data Science & Programming Certification</div>
-          <p class="cert-desc">Core Python programming, data manipulation with NumPy/Pandas, visualization, and data analysis fundamentals.</p>
+          <p class="cert-desc">Core Python programming, data manipulation with NumPy/Pandas, exploratory visualization, and data analysis fundamentals.</p>
           <span class="cert-badge active">● Verified Learning</span>
         </div>
 
@@ -414,8 +463,8 @@
         <div class="cert-card glass-card">
           <div class="cert-icon">🧠</div>
           <h3 class="cert-title">Deep Learning & Neural Networks</h3>
-          <p class="cert-desc">Exploratory coursework on perceptrons, backpropagation gradients, PyTorch fundamentals, and neural architectures.</p>
-
+          <div class="cert-issuer">Neural Architectures & Optimization</div>
+          <p class="cert-desc">Exploratory coursework on perceptrons, backpropagation gradients, PyTorch fundamentals, and convolutional structures.</p>
           <span class="cert-badge pursuing">⏳ Active Coursework</span>
         </div>
 
@@ -423,21 +472,21 @@
         <div class="cert-card glass-card">
           <div class="cert-icon">🗄️</div>
           <h3 class="cert-title">SQL & Database Management</h3>
-          <div class="cert-issuer">Database Systems & Querying</div>
-          <p class="cert-desc">Relational database design, complex SQL queries, indexing, schema normalization, and JSON data management.</p>
+          <div class="cert-issuer">Database Systems & Query Optimization</div>
+          <p class="cert-desc">Relational database design, complex SQL queries, indexing, schema normalization, and structured data handling.</p>
           <span class="cert-badge active">● Verified Learning</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Research Section -->
+  <!-- Research Interests Section -->
   <section id="research">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Core Pursuits</span>
+        <span class="section-tag">Inquiry & Focus</span>
         <h2 class="section-title">Research Interests</h2>
-        <p class="section-subtitle">Exploring key domains shaping the future of intelligent systems.</p>
+        <p class="section-subtitle">Exploring mathematical and computational domains shaping the future of intelligent systems.</p>
       </div>
 
       <div class="research-grid">
@@ -447,7 +496,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
           </div>
           <h3>Artificial Intelligence</h3>
-          <p>Investigating core algorithmic principles, decision systems, and intelligent agent architectures.</p>
+          <p>Investigating core algorithmic principles, decision systems, heuristic optimization, and intelligent agent architectures.</p>
         </div>
         <!-- 2 -->
         <div class="research-card glass-card">
@@ -455,7 +504,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
           </div>
           <h3>Machine Learning</h3>
-          <p>Studying supervised, unsupervised algorithms, model optimization, and generalization techniques.</p>
+          <p>Studying supervised, unsupervised algorithms, loss landscapes, model regularization, and out-of-distribution generalization.</p>
         </div>
         <!-- 3 -->
         <div class="research-card glass-card">
@@ -463,7 +512,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
           </div>
           <h3>Deep Learning</h3>
-          <p>Exploring neural network dynamics, deep backpropagation, representation learning, and PyTorch/TensorFlow.</p>
+          <p>Exploring multi-layer representations, gradient propagation dynamics, PyTorch implementations, and neural capacity.</p>
         </div>
         <!-- 4 -->
         <div class="research-card glass-card">
@@ -471,7 +520,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
           </div>
           <h3>Generative AI</h3>
-          <p>Exploring generative modeling paradigms, latent space representations, and synthesis algorithms.</p>
+          <p>Exploring generative modeling paradigms, latent space interpolations, and sample synthesis techniques.</p>
         </div>
         <!-- 5 -->
         <div class="research-card glass-card">
@@ -479,7 +528,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
           </div>
           <h3>Large Language Models</h3>
-          <p>Analyzing Transformer attention mechanisms, sequence modeling, prompting, and token embeddings.</p>
+          <p>Analyzing Transformer attention mechanisms, sequence-to-sequence modeling, positional encodings, and token embeddings.</p>
         </div>
         <!-- 6 -->
         <div class="research-card glass-card">
@@ -487,7 +536,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
           </div>
           <h3>Computer Vision</h3>
-          <p>Investigating visual feature extraction, image classification, object detection, and spatial understanding.</p>
+          <p>Investigating convolutional feature extraction, object detection pipelines, image segmentation, and spatial representations.</p>
         </div>
         <!-- 7 -->
         <div class="research-card glass-card">
@@ -495,15 +544,15 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </div>
           <h3>Natural Language Processing</h3>
-          <p>Studying semantic parsing, sentiment analysis, language comprehension, and textual embeddings.</p>
+          <p>Studying semantic analysis, text tokenization, sentiment detection, contextual representations, and linguistic comprehension.</p>
         </div>
         <!-- 8 -->
         <div class="research-card glass-card">
           <div class="research-card-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
-          <h3>AI Safety & Responsible AI</h3>
-          <p>Examining model robustness, ethical alignment, bias mitigation, and interpretability in AI models.</p>
+          <h3>Mathematics for AI</h3>
+          <p>Deepening foundations in Linear Algebra, Vector Calculus, Multivariate Optimization, Probability Distributions, and Statistics.</p>
         </div>
       </div>
 
@@ -511,7 +560,7 @@
       <div class="philosophy-box">
         <div class="philosophy-tag">RESEARCH PHILOSOPHY</div>
         <div class="philosophy-text gradient-text">
-          "Learn the fundamentals. Understand the mathematics. Reproduce experiments. Question assumptions. Build. Experiment. Research."
+          "Master the mathematical foundations. Reproduce experiments systematically. Question algorithmic assumptions. Build. Validate. Research."
         </div>
       </div>
     </div>
@@ -523,47 +572,47 @@
       <div class="section-header">
         <span class="section-tag">Selected Works</span>
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Technical implementations combining web architecture, data science, and AI matching concepts.</p>
+        <p class="section-subtitle">Real software implementations combining web architecture, data analytics, and machine learning concepts.</p>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: Banaras Darshan -->
         <div class="project-card glass-card">
-          <span class="project-focus-tag">Web Development + AI + Cultural Technology</span>
+          <span class="project-focus-tag">Web Dev • AI • Cultural Technology</span>
           <h3 class="project-title">Banaras Darshan</h3>
-          <p class="project-desc">A digital platform designed to help users explore the cultural, spiritual and historical heritage of Varanasi.</p>
+          <p class="project-desc">A digital platform designed to help users explore the cultural, spiritual, and historical heritage of Varanasi with interactive mapping and AI chatbot guidance.</p>
 
           <ul class="project-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Temple & Ghats detailed information</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Comprehensive Temple & Ghats historical directory</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Maps integration & visual heritage gallery</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> AI Chatbot & Multi-language support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> AI Chatbot query assistance & Multi-language support</li>
           </ul>
 
           <div class="project-tech-stack">
             <span class="tech-tag">Web Dev</span>
             <span class="tech-tag">AI Chatbot</span>
             <span class="tech-tag">Maps API</span>
-            <span class="tech-tag">Auth & DB</span>
+            <span class="tech-tag">Database & Auth</span>
           </div>
 
           <div class="project-actions">
             <a href="#" class="btn btn-secondary" data-project="banaras-darshan">View Details</a>
-            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Repository">
+            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="Banaras Darshan GitHub Repository">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: AI-Based NGO & Restaurant Connector -->
         <div class="project-card glass-card">
-          <span class="project-focus-tag">AI + Social Impact + Data Matching</span>
+          <span class="project-focus-tag">AI • Social Impact • Data Matching</span>
           <h3 class="project-title">AI-Based NGO & Restaurant Connector</h3>
-          <p class="project-desc">A social-impact concept designed to reduce food waste by intelligently connecting restaurants with NGOs that distribute surplus food.</p>
+          <p class="project-desc">A social-impact system concept designed to minimize food waste by intelligently connecting restaurants with nearby NGOs for timely surplus food redistribution.</p>
 
           <ul class="project-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Restaurant Surplus Food Management</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Intelligent Proximity Matching System</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> NGO Distribution & Analytics Tracking</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Restaurant Surplus Food Management interface</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Intelligent Proximity & Route Matching system</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> NGO Distribution tracking & food waste analytics</li>
           </ul>
 
           <div class="project-tech-stack">
@@ -575,22 +624,22 @@
 
           <div class="project-actions">
             <a href="#" class="btn btn-secondary" data-project="ngo-connector">View Details</a>
-            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Repository">
+            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="NGO Connector GitHub Repository">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 3: Stock Market Analytics -->
         <div class="project-card glass-card">
-          <span class="project-focus-tag">Data Science + Machine Learning</span>
+          <span class="project-focus-tag">Data Science • Machine Learning</span>
           <h3 class="project-title">Stock Market Predictive Analytics</h3>
-          <p class="project-desc">A data science and machine learning project exploring predictive analytics and statistical trend modeling on stock market data.</p>
+          <p class="project-desc">A data science and machine learning exploration analyzing financial time-series, performing statistical feature engineering, and evaluating regression model trends.</p>
 
           <ul class="project-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Financial Data Preprocessing & EDA</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Technical Feature Engineering (SMA, RSI)</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> ML Prediction & Model Evaluation</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated financial data ingestion & EDA visualization</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Technical feature engineering (SMA, EMA, RSI)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Cross-validation & predictive model evaluation</li>
           </ul>
 
           <div class="project-tech-stack">
@@ -602,34 +651,34 @@
 
           <div class="project-actions">
             <a href="#" class="btn btn-secondary" data-project="stock-analytics">View Details</a>
-            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Repository">
+            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="Stock Analytics GitHub Repository">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
           </div>
         </div>
 
-        <!-- Project 4 -->
+        <!-- Project 4: Banking Management System -->
         <div class="project-card glass-card">
-          <span class="project-focus-tag">Python + Programming + Problem Solving</span>
+          <span class="project-focus-tag">Python • OOP • Data Persistence</span>
           <h3 class="project-title">Banking Management System</h3>
-          <p class="project-desc">A programming project implementing fundamental banking operations, customer management, security controls, and JSON data handling.</p>
+          <p class="project-desc">A modular Python application implementing core banking operations, account authorization, transaction receipts, and structured JSON data persistence.</p>
 
           <ul class="project-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Customer Management & Accounts</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Deposits, Withdrawals & Transactions</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> JSON File Persistence & Security</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Account creation, balance inquiry & profile verification</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Secure deposits, withdrawals & ledger logging</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> JSON file handling with balance validation checks</li>
           </ul>
 
           <div class="project-tech-stack">
             <span class="tech-tag">Python</span>
-            <span class="tech-tag">OOP</span>
+            <span class="tech-tag">OOP Architecture</span>
             <span class="tech-tag">JSON Storage</span>
             <span class="tech-tag">File Handling</span>
           </div>
 
           <div class="project-actions">
             <a href="#" class="btn btn-secondary" data-project="banking-system">View Details</a>
-            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="GitHub Repository">
+            <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-icon" aria-label="Banking System GitHub Repository">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
             </a>
           </div>
@@ -644,7 +693,7 @@
       <div class="section-header">
         <span class="section-tag">Evolution</span>
         <h2 class="section-title">My Journey Towards AI Research</h2>
-        <p class="section-subtitle">A structured progression from foundational computing to AI research scientist ambition.</p>
+        <p class="section-subtitle">A structured progression from core computing fundamentals to AI research scientist ambition.</p>
       </div>
 
       <div class="timeline">
@@ -730,7 +779,7 @@
       <div class="section-header">
         <span class="section-tag">Curriculum Path</span>
         <h2 class="section-title">Learning Roadmap</h2>
-        <p class="section-subtitle">Sequential milestone map detailing the technical progression toward AI research capability.</p>
+        <p class="section-subtitle">Sequential milestone map detailing technical progression toward rigorous AI research capability.</p>
       </div>
 
       <div class="roadmap-container">
@@ -755,7 +804,7 @@
 
           <div class="roadmap-node in-progress">
             <div class="roadmap-node-step">STEP 04</div>
-            <div class="roadmap-node-title">Stats & Probability</div>
+            <div class="roadmap-node-title">Stats & Prob</div>
           </div>
           <div class="roadmap-arrow">→</div>
 
@@ -804,13 +853,13 @@
     </div>
   </section>
 
-  <!-- AI Research Lab -->
+  <!-- AI Research Lab Notebook -->
   <section id="lab">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Personal Notebook</span>
         <h2 class="section-title">AI Research Lab</h2>
-        <p class="section-subtitle">An authentic documentation hub for ongoing experiments, paper notes, and model implementations.</p>
+        <p class="section-subtitle">An authentic documentation hub for ongoing experiments, paper notes, and architectural implementations.</p>
       </div>
 
       <div class="lab-grid">
@@ -822,7 +871,7 @@
         </div>
 
         <div class="lab-card glass-card">
-          <span class="lab-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3);">In Progress</span>
+          <span class="lab-badge" style="background: var(--accent-blue-soft); color: var(--accent-blue); border-color: var(--accent-blue-border);">In Progress</span>
           <div class="lab-category">RESEARCH PAPERS</div>
           <h3 class="lab-title">Transformer & Attention Analysis</h3>
           <p class="lab-desc">Detailed reading notes on "Attention Is All You Need" (Vaswani et al.) and foundational self-attention mechanics.</p>
@@ -838,7 +887,7 @@
         <div class="lab-card glass-card">
           <span class="lab-badge">Coming Soon</span>
           <div class="lab-category">DATASETS</div>
-          <h3 class="lab-title">Curated NLP & Stock Analytics Sets</h3>
+          <h3 class="lab-title">Curated NLP & Financial Analytics</h3>
           <p class="lab-desc">Preprocessed time-series and textual datasets prepared for machine learning feature engineering tasks.</p>
         </div>
 
@@ -850,9 +899,9 @@
         </div>
 
         <div class="lab-card glass-card">
-          <span class="lab-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3);">In Progress</span>
+          <span class="lab-badge" style="background: var(--accent-blue-soft); color: var(--accent-blue); border-color: var(--accent-blue-border);">In Progress</span>
           <div class="lab-category">IDEAS & NOTES</div>
-          <h3 class="lab-title">AI Safety & Autonomous Agents</h3>
+          <h3 class="lab-title">AI Safety & Autonomous Boundaries</h3>
           <p class="lab-desc">Conceptual notes examining safe agent decision boundaries and verifiable constraints in autonomous planning.</p>
         </div>
       </div>
@@ -865,7 +914,7 @@
       <div class="section-header">
         <span class="section-tag">Open Source</span>
         <h2 class="section-title">GitHub Activity</h2>
-        <p class="section-subtitle">Live profile integration tracking continuous coding and repository developments.</p>
+        <p class="section-subtitle">Live profile integration tracking continuous coding and public repository developments.</p>
       </div>
 
       <div class="github-wrapper glass-card">
@@ -878,8 +927,8 @@
             </div>
           </div>
 
-          <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">
-            Documenting my code, research experiments, and computer science projects transparently on GitHub.
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.65;">
+            Documenting my code, research experiments, and computer science projects transparently in open repositories on GitHub.
           </p>
 
           <div class="github-stats-grid">
@@ -903,26 +952,26 @@
           </a>
         </div>
 
-        <div style="background: rgba(255, 255, 255, 0.02); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+        <div style="background: rgba(255, 255, 255, 0.65); padding: 1.8rem; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--cyan-light);">ACTIVE REPOSITORIES</span>
-            <span style="font-size: 0.8rem; color: var(--emerald);">● Public</span>
+            <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-blue); font-weight: 600;">FEATURED REPOSITORIES</span>
+            <span style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--accent-emerald); font-weight: 600;">● Public</span>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-            <div style="padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid var(--border-color);">
-              <div style="font-weight: 600; font-size: 0.95rem;">Banaras-Darshan</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Cultural platform with AI Chatbot</div>
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <div class="github-repo-card">
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">Banaras-Darshan</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Cultural platform with AI Chatbot integration</div>
             </div>
 
-            <div style="padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid var(--border-color);">
-              <div style="font-weight: 600; font-size: 0.95rem;">Stock-Market-Analytics</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Data Science & ML stock prediction</div>
+            <div class="github-repo-card">
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">Stock-Market-Analytics</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Data Science & ML stock trend prediction</div>
             </div>
 
-            <div style="padding: 0.8rem; background: rgba(15, 23, 42, 0.6); border-radius: 8px; border: 1px solid var(--border-color);">
-              <div style="font-weight: 600; font-size: 0.95rem;">Banking-Management-System</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">Python OOP & JSON data handling</div>
+            <div class="github-repo-card">
+              <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-main);">Banking-Management-System</div>
+              <div style="font-size: 0.82rem; color: var(--text-muted);">Python OOP architecture & JSON data handling</div>
             </div>
           </div>
         </div>
@@ -936,7 +985,7 @@
       <div class="section-header">
         <span class="section-tag">Active Growth</span>
         <h2 class="section-title">Currently Learning</h2>
-        <p class="section-subtitle">Core subjects and technical areas undergoing active study and practice.</p>
+        <p class="section-subtitle">Core mathematical and computational areas undergoing active study and practice.</p>
       </div>
 
       <div class="focus-grid">
@@ -982,10 +1031,10 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 2rem;">
-        <span class="status-badge" style="background: rgba(6, 182, 212, 0.1); border-color: var(--border-cyan); color: var(--cyan-light);">
-          <span class="ping-dot" style="background: var(--cyan); flex-shrink: 0;"></span>
-          <span>Learning in public.</span>
+      <div style="text-align: center; margin-top: 2.2rem;">
+        <span class="status-badge" style="background: rgba(37, 99, 235, 0.08); border-color: var(--accent-blue-border); color: var(--accent-blue);">
+          <span class="ping-dot" style="background: var(--accent-blue);"></span>
+          <span>Learning in public • Open science mindset</span>
         </span>
       </div>
     </div>
@@ -999,25 +1048,25 @@
         Experiment fearlessly. Research relentlessly."
       </div>
       <p class="quote-small">
-        AI is not just about using models. It is about understanding, experimenting and discovering what comes next.
+        Artificial Intelligence is not merely about consuming models. It is about understanding mathematical dynamics, testing hypotheses, and discovering what comes next.
       </p>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section (Final Cloud Glass Panel) -->
   <section id="contact">
     <div class="container">
       <div class="contact-wrapper glass-card">
         <span class="section-tag">Get In Touch</span>
         <h2 class="section-title" style="margin-top: 1rem;">Let's Build Something Intelligent.</h2>
         <p class="section-subtitle" style="margin-bottom: 2rem;">
-          Whether you're interested in AI research, collaboration, projects, internships, or simply discussing Artificial Intelligence, feel free to reach out.
+          Whether you're interested in AI research, collaborations, machine learning projects, internships, or discussing intelligent systems, feel free to connect.
         </p>
 
         <div class="contact-links">
-          <button class="copy-email-btn">
+          <button class="copy-email-btn" aria-label="Copy Email Address">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            adarshpandey4810@gmail.com
+            <span>adarshpandey4810@gmail.com</span>
           </button>
 
           <a href="https://www.linkedin.com/in/adarshai-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
@@ -1042,10 +1091,10 @@
         <div class="footer-tagline">AI • Machine Learning • Data Science • Research</div>
       </div>
 
-      <div style="display: flex; gap: 1.2rem;">
-        <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">GitHub</a>
-        <a href="https://www.linkedin.com/in/adarshai-cmd" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted);">LinkedIn</a>
-        <a href="mailto:adarshpandey4810@gmail.com" style="color: var(--text-muted);">Email</a>
+      <div style="display: flex; gap: 1.4rem;">
+        <a href="https://github.com/adarshai-cmd" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); font-size: 0.92rem;">GitHub</a>
+        <a href="https://www.linkedin.com/in/adarshai-cmd" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); font-size: 0.92rem;">LinkedIn</a>
+        <a href="mailto:adarshpandey4810@gmail.com" style="color: var(--text-muted); font-size: 0.92rem;">Email</a>
       </div>
 
       <div class="footer-copy">
@@ -1054,20 +1103,20 @@
     </div>
   </footer>
 
-  <!-- Project Detail Modal -->
-  <div class="modal-overlay" id="project-modal">
+  <!-- Project Detail Modal (Light Frosted Glass) -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-content">
-      <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+      <button class="modal-close" id="modal-close" aria-label="Close project modal">&times;</button>
       <span class="project-focus-tag" id="modal-focus">Focus Tag</span>
       <h2 id="modal-title" style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; color: var(--text-main);">Project Title</h2>
-      <p id="modal-desc" style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.8rem;">Description</p>
+      <p id="modal-desc" style="color: var(--text-secondary); font-size: 1rem; line-height: 1.68; margin-bottom: 1.8rem;">Description</p>
 
-      <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan-light); margin-bottom: 0.8rem;">Key Features & Architecture</h4>
+      <h4 style="font-size: 0.88rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-blue); margin-bottom: 0.8rem;">Key Features & Architecture</h4>
       <ul class="project-features" id="modal-features" style="margin-bottom: 1.8rem;">
-        <!-- Features populated by JS -->
+        <!-- Features dynamically populated by JS -->
       </ul>
 
-      <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan-light); margin-bottom: 0.8rem;">Technologies Used</h4>
+      <h4 style="font-size: 0.88rem; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-blue); margin-bottom: 0.8rem;">Technologies Used</h4>
       <div class="project-tech-stack" id="modal-tech" style="margin-bottom: 1.8rem; border-top: none; padding-top: 0;">
         <!-- Tech stack tags populated by JS -->
       </div>

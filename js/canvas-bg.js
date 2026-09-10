@@ -1,164 +1,257 @@
 /* ==========================================================================
-   NEURAL NETWORK CANVAS BACKGROUND & FLOATING MATH SYMBOLS
-   Interactive Particle System for AI Aesthetics
+   ATMOSPHERIC CLOUD GLASS BACKGROUND
+   Living, organic sky / mist / light drifting behind frosted glass
+   Subtle tones: Misty white, soft cloud blue, delicate lavender
    ========================================================================== */
 
 (function () {
-  const canvas = document.getElementById('neural-canvas');
+  const canvas = document.getElementById('atmospheric-canvas') || document.getElementById('neural-canvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  let width, height;
-  let particles = [];
-  let mathSymbols = [];
-  let mouse = { x: null, y: null, radius: 150 };
+  let width = 0;
+  let height = 0;
+  let animationFrameId = null;
 
   // Check reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let prefersReducedMotion = motionQuery.matches;
 
-  function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-    initParticles();
-    initMathSymbols();
+  motionQuery.addEventListener('change', (e) => {
+    prefersReducedMotion = e.matches;
+    if (prefersReducedMotion) {
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      drawStaticMist();
+    } else {
+      lastTime = performance.now();
+      animate(lastTime);
+    }
+  });
+
+  // Soft atmospheric cloud palette
+  // Light, calm, airy: sky blue, misty white, faint dawn lavender
+  const CLOUD_PALETTES = [
+    {
+      // Soft Azure Mist
+      r: 219, g: 234, b: 254,
+      baseAlpha: 0.55,
+      radiusScale: 0.52
+    },
+    {
+      // Pure Misty Pearl White
+      r: 255, g: 255, b: 255,
+      baseAlpha: 0.65,
+      radiusScale: 0.58
+    },
+    {
+      // Delicate Light Lavender
+      r: 237, g: 233, b: 254,
+      baseAlpha: 0.45,
+      radiusScale: 0.48
+    },
+    {
+      // Soft Sky Cloud
+      r: 224, g: 242, b: 254,
+      baseAlpha: 0.50,
+      radiusScale: 0.55
+    },
+    {
+      // Luminous Cloud Light
+      r: 248, g: 250, b: 252,
+      baseAlpha: 0.60,
+      radiusScale: 0.62
+    },
+    {
+      // Whisper Heather
+      r: 243, g: 232, b: 255,
+      baseAlpha: 0.40,
+      radiusScale: 0.44
+    }
+  ];
+
+  class CloudMass {
+    constructor(config, index) {
+      this.r = config.r;
+      this.g = config.g;
+      this.b = config.b;
+      this.baseAlpha = config.baseAlpha;
+      this.radiusScale = config.radiusScale;
+      this.index = index;
+
+      // Organic drift parameters with distinct sinusoidal frequencies
+      this.phaseX = Math.random() * Math.PI * 2;
+      this.phaseY = Math.random() * Math.PI * 2;
+      this.phaseRadius = Math.random() * Math.PI * 2;
+      this.phaseAlpha = Math.random() * Math.PI * 2;
+
+      // Slow, calm frequency periods (40 to 90 seconds)
+      this.speedX = 0.00015 + Math.random() * 0.00012;
+      this.speedY = 0.00012 + Math.random() * 0.00010;
+      this.speedRadius = 0.00018 + Math.random() * 0.00014;
+      this.speedAlpha = 0.00020 + Math.random() * 0.00015;
+
+      // Base anchor position spread across the screen
+      const anchors = [
+        { x: 0.20, y: 0.25 },
+        { x: 0.80, y: 0.20 },
+        { x: 0.50, y: 0.50 },
+        { x: 0.15, y: 0.75 },
+        { x: 0.85, y: 0.80 },
+        { x: 0.45, y: 0.85 }
+      ];
+      const anchor = anchors[index % anchors.length];
+      this.anchorX = anchor.x;
+      this.anchorY = anchor.y;
+
+      // Smooth mouse displacement
+      this.targetMouseOffsetX = 0;
+      this.targetMouseOffsetY = 0;
+      this.mouseOffsetX = 0;
+      this.mouseOffsetY = 0;
+    }
+
+    update(time, mouse) {
+      // Harmonic gentle wandering around anchor point
+      const wanderRadiusX = width * 0.18;
+      const wanderRadiusY = height * 0.16;
+
+      this.currentX = this.anchorX * width + Math.sin(time * this.speedX + this.phaseX) * wanderRadiusX;
+      this.currentY = this.anchorY * height + Math.cos(time * this.speedY + this.phaseY) * wanderRadiusY;
+
+      // Natural gentle breathing of cloud volume
+      const baseRadius = Math.max(width, height) * this.radiusScale;
+      const breathing = Math.sin(time * this.speedRadius + this.phaseRadius) * (baseRadius * 0.12);
+      this.currentRadius = Math.max(120, baseRadius + breathing);
+
+      // Subtle opacity shift
+      const alphaPulse = Math.sin(time * this.speedAlpha + this.phaseAlpha) * 0.10;
+      this.currentAlpha = Math.max(0.15, Math.min(0.85, this.baseAlpha + alphaPulse));
+
+      // Subtle, gentle drift reaction to mouse (not snappy, very soft inertia)
+      if (mouse.active && mouse.x !== null) {
+        const dx = (mouse.x - width / 2) / (width / 2);
+        const dy = (mouse.y - height / 2) / (height / 2);
+        const factor = (this.index % 2 === 0 ? 1 : -0.7) * 25;
+        this.targetMouseOffsetX = dx * factor;
+        this.targetMouseOffsetY = dy * factor;
+      } else {
+        this.targetMouseOffsetX = 0;
+        this.targetMouseOffsetY = 0;
+      }
+
+      this.mouseOffsetX += (this.targetMouseOffsetX - this.mouseOffsetX) * 0.02;
+      this.mouseOffsetY += (this.targetMouseOffsetY - this.mouseOffsetY) * 0.02;
+
+      this.finalX = this.currentX + this.mouseOffsetX;
+      this.finalY = this.currentY + this.mouseOffsetY;
+    }
+
+    draw() {
+      const gradient = ctx.createRadialGradient(
+        this.finalX,
+        this.finalY,
+        0,
+        this.finalX,
+        this.finalY,
+        this.currentRadius
+      );
+
+      const rgb = `${this.r}, ${this.g}, ${this.b}`;
+      gradient.addColorStop(0, `rgba(${rgb}, ${this.currentAlpha})`);
+      gradient.addColorStop(0.35, `rgba(${rgb}, ${this.currentAlpha * 0.65})`);
+      gradient.addColorStop(0.70, `rgba(${rgb}, ${this.currentAlpha * 0.25})`);
+      gradient.addColorStop(1, `rgba(${rgb}, 0)`);
+
+      ctx.save();
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(this.finalX, this.finalY, this.currentRadius, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
   }
 
-  window.addEventListener('resize', resize);
+  let clouds = [];
+  const mouse = { x: null, y: null, active: false };
+
+  function initClouds() {
+    clouds = CLOUD_PALETTES.map((palette, i) => new CloudMass(palette, i));
+  }
+
+  function resize() {
+    // Keep internal canvas resolution optimal for performance while sharp
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
+    if (prefersReducedMotion) {
+      drawStaticMist();
+    }
+  }
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
+  });
+
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+    mouse.active = true;
   });
 
   window.addEventListener('mouseleave', () => {
-    mouse.x = null;
-    mouse.y = null;
+    mouse.active = false;
   });
 
-  // Particle Class
-  class Particle {
-    constructor() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * (prefersReducedMotion ? 0.2 : 0.8);
-      this.vy = (Math.random() - 0.5) * (prefersReducedMotion ? 0.2 : 0.8);
-      this.radius = Math.random() * 2 + 1;
-      this.color = Math.random() > 0.5 ? 'rgba(99, 102, 241, ' : 'rgba(6, 182, 212, ';
-      this.baseAlpha = Math.random() * 0.5 + 0.3;
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      // Mouse interaction
-      if (mouse.x && mouse.y) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < mouse.radius) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2;
-          this.y -= (dy / dist) * force * 2;
-        }
-      }
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color + this.baseAlpha + ')';
-      ctx.fill();
-    }
-  }
-
-  // Floating Math Symbols
-  const symbolList = ['σ(x)', '∇L', 'E[X]', 'Wᵀx + b', '∂L/∂w', 'f(x)', '∫p(x)dx', 'y = wx + b', 'argmax', 'Softmax'];
-  
-  class MathSymbol {
-    constructor() {
-      this.text = symbolList[Math.floor(Math.random() * symbolList.length)];
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vy = -(Math.random() * 0.3 + 0.1);
-      this.alpha = Math.random() * 0.25 + 0.08;
-      this.fontSize = Math.floor(Math.random() * 6) + 12;
-    }
-
-    update() {
-      this.y += this.vy;
-      if (this.y < -30) {
-        this.y = height + 30;
-        this.x = Math.random() * width;
-      }
-    }
-
-    draw() {
-      ctx.font = `${this.fontSize}px "JetBrains Mono", monospace`;
-      ctx.fillStyle = `rgba(99, 102, 241, ${this.alpha})`;
-      ctx.fillText(this.text, this.x, this.y);
-    }
-  }
-
-  function initParticles() {
-    particles = [];
-    const count = Math.min(Math.floor((width * height) / 14000), 80);
-    for (let i = 0; i < count; i++) {
-      particles.push(new Particle());
-    }
-  }
-
-  function initMathSymbols() {
-    mathSymbols = [];
-    const count = Math.min(Math.floor((width * height) / 45000), 18);
-    for (let i = 0; i < count; i++) {
-      mathSymbols.push(new MathSymbol());
-    }
-  }
-
-  function connectParticles() {
-    const maxDist = 130;
-    for (let a = 0; a < particles.length; a++) {
-      for (let b = a + 1; b < particles.length; b++) {
-        const dx = particles[a].x - particles[b].x;
-        const dy = particles[a].y - particles[b].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < maxDist) {
-          const alpha = (1 - dist / maxDist) * 0.25;
-          ctx.beginPath();
-          ctx.moveTo(particles[a].x, particles[a].y);
-          ctx.lineTo(particles[b].x, particles[b].y);
-          ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-  }
-
-  function animate() {
+  function drawStaticMist() {
+    // Serene static cloud composition for prefers-reduced-motion
     ctx.clearRect(0, 0, width, height);
 
-    // Draw Math symbols
-    mathSymbols.forEach((s) => {
-      s.update();
-      s.draw();
+    // Warm misty ambient base
+    ctx.fillStyle = '#f8fafc';
+    ctx.fillRect(0, 0, width, height);
+
+    clouds.forEach((cloud) => {
+      cloud.update(12000, { active: false, x: null, y: null });
+      cloud.draw();
     });
-
-    // Draw particles and neural connections
-    particles.forEach((p) => {
-      p.update();
-      p.draw();
-    });
-
-    connectParticles();
-
-    requestAnimationFrame(animate);
   }
 
+  let lastTime = performance.now();
+
+  function animate(currentTime) {
+    if (prefersReducedMotion) {
+      drawStaticMist();
+      return;
+    }
+
+    ctx.clearRect(0, 0, width, height);
+
+    // Render each living cloud mass
+    for (let i = 0; i < clouds.length; i++) {
+      clouds[i].update(currentTime, mouse);
+      clouds[i].draw();
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
+  }
+
+  // Initialize
+  initClouds();
   resize();
-  animate();
+
+  if (prefersReducedMotion) {
+    drawStaticMist();
+  } else {
+    lastTime = performance.now();
+    animate(lastTime);
+  }
 })();
